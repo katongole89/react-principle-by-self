@@ -9,6 +9,7 @@ import React, {useState, useCallback, useMemo, useReducer} from 'react'
 
 
 const Hooks = () =>{
+    const [paper, setPaper] = useState(true)
 
 }
 
