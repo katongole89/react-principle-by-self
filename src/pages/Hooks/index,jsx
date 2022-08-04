@@ -1,4 +1,12 @@
-import React from 'react'
+import React, {useState, useCallback, useMemo, useReducer} from 'react'
+
+//all hooks
+// useState - managing state
+//useReducer - managing state
+//useContext - passing value thru a tree of components
+//useMemo - return memorise value --- mainly used for expensive functions
+//useCallback - returns memorized function
+
 
 const Hooks = () =>{
 
