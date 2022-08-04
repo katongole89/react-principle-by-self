@@ -3,7 +3,7 @@ import InputNormal from '../../components/normalInput'
 
 const TheInput = (props) =>{
     return(
-        <InputNormal {...props}/>
+        <InputNormal {...props} />
         )
 }
 
