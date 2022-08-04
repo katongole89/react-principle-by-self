@@ -1,0 +1,33 @@
+import React, {useState, useCallback, useMemo, useReducer} from 'react'
+
+//all hooks
+// useState - managing state
+//useReducer - managing state
+//useContext - passing value thru a tree of components
+//useMemo - return memorise value --- mainly used for expensive functions
+//useCallback - returns memorized function
+
+const defaultState = {
+    name:''
+}
+
+const reducer = (state, action) =>{
+    if(action.type === 'UPDATE_NAME'){
+        return {...state, name:action.payload}
+    }
+}
+
+
+const Hooks = () =>{
+    //using useState
+    const [paper, setPaper] = useState(true)
+    //using useReducer
+    const [state, dispatch] = useReducer(reducer, defaultState)
+    //using useCallback and useMemo
+    const updateName = useCallback(()=>{
+        dispatch({type:'UPDATE_NAME', payload:'katongole'})
+    }, [])
+
+}
+
+export default Hooks
