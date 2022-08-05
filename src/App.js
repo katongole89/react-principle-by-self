@@ -5,6 +5,7 @@ import SearchableDropdown from './pages/SearchableDropDown';
 import SimpleToDo from './pages/simpleToDo'
 import HomePage from './pages/HomePage'
 import Hooks from './pages/Hooks/index,jsx';
+import TestRecaptcha from './pages/Recaptcha';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path='/searchable-dropdown' component={SearchableDropdown} />
           <Route path='/simple-to-do' component={SimpleToDo} />
           <Route path='/hooks' component={Hooks} />
+          <Route path='/recapture' component={TestRecaptcha} />
       </Switch>
     </Router>
   );
