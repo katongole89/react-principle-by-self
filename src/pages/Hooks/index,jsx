@@ -1,4 +1,5 @@
 import React, {useState, useCallback, useMemo, useReducer} from 'react'
+import { useEffect } from 'react'
 
 //all hooks
 // useState - managing state
@@ -34,8 +35,10 @@ const Hooks = () =>{
 
     const testValue = useMemo(()=>expensiveFunc, [paper])
 
+    useEffect(()=>{
+        console.log('running useEffect')
 
-
+    }, [])
 
 }
 
