@@ -28,6 +28,15 @@ const Hooks = () =>{
         dispatch({type:'UPDATE_NAME', payload:'katongole'})
     }, [])
 
+    const expensiveFunc = () => {
+        return 'expensive value'
+    }
+
+    const testValue = useMemo(()=>expensiveFunc, [paper])
+
+
+
+
 }
 
 export default Hooks
