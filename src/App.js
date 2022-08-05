@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import SearchableDropdown from './pages/SearchableDropDown';
 import SimpleToDo from './pages/simpleToDo'
 import HomePage from './pages/HomePage'
+import Hooks from './pages/Hooks/index,jsx';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route exact path='/' component={HomePage} />
           <Route path='/searchable-dropdown' component={SearchableDropdown} />
           <Route path='/simple-to-do' component={SimpleToDo} />
+          <Route path='/hooks' component={Hooks} />
       </Switch>
     </Router>
   );
