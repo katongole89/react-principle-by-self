@@ -1,0 +1,12 @@
+import React from 'react'
+
+const FunkComponent = () =>{
+    return(
+        <div>
+            <span>Test page</span>
+        </div>
+    )
+
+}
+
+export default FunkComponent

@@ -6,6 +6,9 @@ import SimpleToDo from './pages/simpleToDo'
 import HomePage from './pages/HomePage'
 import Hooks from './pages/Hooks/index,jsx';
 import TestRecaptcha from './pages/Recaptcha';
+// import NeededComponent from './pages/SimpleComponents/index.js';
+import FunkComponent from './pages/FunkComponents/index,js';
+
 
 const App = () => {
   return (
@@ -16,6 +19,7 @@ const App = () => {
           <Route path='/simple-to-do' component={SimpleToDo} />
           <Route path='/hooks' component={Hooks} />
           <Route path='/recapture' component={TestRecaptcha} />
+          <Route path='/funk-component' component={FunkComponent} />
       </Switch>
     </Router>
   );
