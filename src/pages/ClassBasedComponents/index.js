@@ -7,3 +7,13 @@ class SimpleClassComponent extends React.Component {
 }
 
 export default SimpleClassComponent
+
+
+
+//where to use
+// Initially they were used coz of handling state
+// but right now i use them error boundaries - creating a fallback ui incase of an error more so in production
+
+
+
+
