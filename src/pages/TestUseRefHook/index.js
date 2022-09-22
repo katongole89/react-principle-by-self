@@ -2,6 +2,8 @@
 //can be used like useRef
 //reference elements inside of the html
 
+//-- u can use it to store your previous value of state
+
 import React, {useRef, useEffect, useState} from 'react'
 
 const TestUseRefHook = () =>{
@@ -9,12 +11,18 @@ const TestUseRefHook = () =>{
         theValue:''
     })
     const renderCount = useRef(0)
+    const previousState = useRef('')
 
     const inputRef = useRef()
 
     useEffect(()=>{
         renderCount.current = renderCount.current + 1
     })
+
+    useEffect(()=>{
+        previousState.current = state
+        console.log(previousState)
+    }, [state])
 
     function focus(){
         inputRef.current.focus()
