@@ -8,6 +8,7 @@ import Hooks from './pages/Hooks/index,jsx';
 import TestRecaptcha from './pages/Recaptcha';
 // import NeededComponent from './pages/SimpleComponents/index.js';
 import FunkComponent from './pages/FunkComponents/index,js';
+import TestUseRefHook from './pages/TestUseRefHook/index,js';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/hooks' component={Hooks} />
           <Route path='/recapture' component={TestRecaptcha} />
           <Route path='/funk-component' component={FunkComponent} />
+          <Route path='/test-use-ref' component={TestUseRefHook} />
       </Switch>
     </Router>
   );
