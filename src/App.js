@@ -8,7 +8,7 @@ import Hooks from './pages/Hooks/index,jsx';
 import TestRecaptcha from './pages/Recaptcha';
 // import NeededComponent from './pages/SimpleComponents/index.js';
 import FunkComponent from './pages/FunkComponents/index,js';
-import TestUseRefHook from './pages/TestUseRefHook/index,js';
+import TestUseRefHook from './pages/TestUseRefHook';
 
 
 const App = () => {
