@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 //using axios to get and to post
 //using fetch to get and to post
@@ -7,7 +7,8 @@ const UsingFetchSetup = () =>{
         <>
             <span style={{fontWeight:'bold'}}>Fetch</span>
             <div style={{display:'flex',width:'100%', border: '1px solid gray', minHeight:'200px'}}>
-                <div style={{flex:1}}>
+                <div style={{flex:1,display:'flex',flexDirection:'column'}}>
+                    <span>Get data</span>
                     <button>Get data</button>
                 </div>
                 <div style={{flex:1}}>
@@ -38,7 +39,14 @@ const UsingAxiosSetup = () =>{
 
 
 const FetchingData = () =>{
+    const [state, setState] = useState({
+        fetchData: [],
+        isFetching:false,
+        axiosData: [],
+        isAxiosing:false
+    })
     return(
+
         <>
             <div>
                 FetchingData
