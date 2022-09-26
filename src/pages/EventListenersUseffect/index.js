@@ -14,7 +14,6 @@ const EventListeners = () => {
         window.addEventListener('resize', checkSize)
         //do useEffect cleanup - due to a memory leak
         return ()=>{
-            
             window.removeEventListener('resize', checkSize)
         }
     }, [])
