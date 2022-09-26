@@ -1,0 +1,11 @@
+import React from 'react'
+
+const EventListeners = () => {
+    return(
+        <div>
+            EventListeners
+        </div>
+    )
+}
+
+export default EventListeners
