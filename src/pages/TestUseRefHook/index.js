@@ -19,10 +19,10 @@ const TestUseRefHook = () =>{
         renderCount.current = renderCount.current + 1
     })
 
-    useEffect(()=>{
-        previousState.current = state
-        console.log(previousState)
-    }, [state])
+    // useEffect(()=>{
+    //     previousState.current = state
+    //     console.log(previousState)
+    // }, [state])
 
     function focus(){
         inputRef.current.focus()
