@@ -10,6 +10,7 @@ import TestRecaptcha from './pages/Recaptcha';
 import FunkComponent from './pages/FunkComponents/index,js';
 import TestUseRefHook from './pages/TestUseRefHook';
 import EventListeners from './pages/EventListenersUseffect/index.js';
+import FetchingData from './pages/FetchingData';
 
 
 const App = () => {
@@ -24,6 +25,8 @@ const App = () => {
           <Route path='/funk-component' component={FunkComponent} />
           <Route path='/test-use-ref' component={TestUseRefHook} />
           <Route path='/event-listeners' component={EventListeners} />
+          <Route path='/fetching-data' component={FetchingData} />
+
       </Switch>
     </Router>
   );
