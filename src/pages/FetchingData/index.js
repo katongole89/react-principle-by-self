@@ -4,14 +4,34 @@ import React from 'react'
 //using fetch to get and to post
 const UsingFetchSetup = () =>{
     return(
-        <div style={{display:'flex',width:'100%', border: '1px solid gray', minHeight:'200px'}}>
-            <div style={{flex:1}}>
-                <button>Get data</button>
+        <>
+            <span style={{fontWeight:'bold'}}>Fetch</span>
+            <div style={{display:'flex',width:'100%', border: '1px solid gray', minHeight:'200px'}}>
+                <div style={{flex:1}}>
+                    <button>Get data</button>
+                </div>
+                <div style={{flex:1}}>
+                    Post data side
+                </div>
             </div>
-            <div style={{flex:1}}>
-                Post data side
+        </>
+    )
+}
+
+
+const UsingAxiosSetup = () =>{
+    return(
+        <>
+            <span style={{fontWeight:'bold'}}>Axios</span>
+            <div style={{display:'flex',width:'100%', border: '1px solid gray', minHeight:'200px'}}>
+                <div style={{flex:1}}>
+                    <button>Get data</button>
+                </div>
+                <div style={{flex:1}}>
+                    Post data side
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
@@ -27,8 +47,8 @@ const FetchingData = () =>{
                 <div style={{flex:1,margin:'10px'}}>
                     <UsingFetchSetup/>
                 </div>
-                <div style={{flex:1}}>
-                    second part
+                <div style={{flex:1,margin:'10px'}}>
+                    <UsingAxiosSetup/>
                 </div>
 
 
