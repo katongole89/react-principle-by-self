@@ -108,14 +108,21 @@ const FetchingData = () =>{
             redirect: 'follow'
         }
         let url = 'https://raw.githubusercontent.com/bahiirwa/uganda-APIs/master/districts.json'
-        let fetchedData = await fetch(url)
-        const toJsonData = await fetchedData.json()
-        setState({...state, isFetching:false, fetchData:toJsonData[0].districts}) 
+         
+
+        try{
+            let fetchedData = await fetch(url)
+            const toJsonData = await fetchedData.json()
+            setState({...state, isFetching:false, fetchData:toJsonData[0].districts})
+        }catch(error){
+            console.log('catching the error')
+            setState({...state, isFetching:false })
+        }
     }
 
     useEffect(()=>{
         if(state.isFetching){
-            console.log('fetching the data ...')
+            // console.log('fetching the data ...')
             FetchingFetch()
         }
     }, [state.isFetching])
@@ -143,9 +150,7 @@ const FetchingData = () =>{
             }else{
                 setState({...state, isAxiosing:false, axiosData:[], axiosNetworkErr:false})
             }
-
         }
-        
     }
 
     useEffect(()=>{
