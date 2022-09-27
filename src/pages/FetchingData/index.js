@@ -42,7 +42,7 @@ const UsingFetchSetup = ({fetchData, isFetching, handleClickFetchGet}) =>{
 }
 
 
-const UsingAxiosSetup = ({isAxiosing, axiosData, handleClickAxiosGet}) =>{
+const UsingAxiosSetup = ({isAxiosing, axiosData, handleClickAxiosGet, axiosNetworkErr}) =>{
     return(
         <>
             <span style={{fontWeight:'bold'}}>Axios</span>
@@ -69,6 +69,15 @@ const UsingAxiosSetup = ({isAxiosing, axiosData, handleClickAxiosGet}) =>{
                             }
                         </div>
                     }
+
+                    {axiosNetworkErr?
+                        <div style={{padding:'10px', backgroundColor:'tomato'}}>
+                            <span>Network Error</span>
+                        </div>
+                    
+                        :
+                        null
+                    }
                 </div>
                 <div style={{flex:1}}>
                     Post data side
@@ -83,7 +92,8 @@ const FetchingData = () =>{
         fetchData: [],
         isFetching:false,
         axiosData: [],
-        isAxiosing:false
+        isAxiosing:false,
+        axiosNetworkErr:false
     })
 
     const FetchingFetch = async () => {
@@ -116,14 +126,26 @@ const FetchingData = () =>{
     }
 
     const handleClickAxiosGet = () =>{
-        setState({...state, isAxiosing:true})
+        setState({...state, isAxiosing:true, axiosNetworkErr:false})
     }
 
     const FetchingAxios = async () => {
         let url = 'https://raw.githubusercontent.com/bahiirwa/uganda-APIs/master/districts.json'
-        let axiosedData = await axios(url)
-        console.log(axiosedData)
-        setState({...state, isAxiosing:false, axiosData:axiosedData.data[0].districts}) 
+
+        try{
+            let axiosedData = await axios(url)
+            console.log(axiosedData)
+            setState({...state, isAxiosing:false, axiosData:axiosedData.data[0].districts}) 
+        }catch(error){
+            console.log(error)
+            if(error.message === 'Network Error'){
+                setState({...state, isAxiosing:false, axiosData:[], axiosNetworkErr:true})
+            }else{
+                setState({...state, isAxiosing:false, axiosData:[], axiosNetworkErr:false})
+            }
+
+        }
+        
     }
 
     useEffect(()=>{
@@ -148,7 +170,7 @@ const FetchingData = () =>{
                     <UsingFetchSetup fetchData={state.fetchData} isFetching={state.isFetching} handleClickFetchGet={handleClickFetchGet}/>
                 </div>
                 <div style={{flex:1,margin:'10px'}}>
-                    <UsingAxiosSetup isAxiosing={state.isAxiosing} axiosData={state.axiosData} handleClickAxiosGet={handleClickAxiosGet}/>
+                    <UsingAxiosSetup isAxiosing={state.isAxiosing} axiosData={state.axiosData} handleClickAxiosGet={handleClickAxiosGet} axiosNetworkErr={state.axiosNetworkErr}/>
                 </div>
 
 
