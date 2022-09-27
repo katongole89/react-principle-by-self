@@ -19,10 +19,10 @@ const UsingFetchSetup = ({fetchData, isFetching, handleClickFetchGet}) =>{
                             {fetchData.length < 1?
                                 <span>No data to display</span>
                             :
-                                (fetchData.map(()=>{
+                                (fetchData.map((district)=>{
                                     return(
                                         <div>
-                                            single component
+                                            <span>{district.name}</span>
                                         </div>
                                     )
                                 }))
@@ -57,22 +57,6 @@ const UsingAxiosSetup = () =>{
     )
 }
 
-
-// let myHeaders = {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//     "Authorization": `Bearer ${refreshed_access?refreshed_access:access}`
-// }
-// let requestOptions = {
-// method: 'GET',
-// headers: myHeaders,
-// redirect: 'follow'
-// };
-
-// let response = await fetch(`${domain}/api/institutions/all-institutes/`, requestOptions)
-
-
-
 const FetchingData = () =>{
     const [state, setState] = useState({
         fetchData: [],
@@ -84,21 +68,23 @@ const FetchingData = () =>{
     const FetchingFetch = async () => {
         let requestOptions = {
             method: 'GET',
+            mode: 'cors',
             headers:{
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                "Authorization": `Bearer ${refreshed_access?refreshed_access:access}`
+                // "Authorization": `Bearer ${refreshed_access?refreshed_access:access}`
             },
             redirect: 'follow'
         }
         let url = 'https://raw.githubusercontent.com/bahiirwa/uganda-APIs/master/districts.json'
-        let fetchedData = await fetch(url, requestOptions)
+        let fetchedData = await fetch(url)
         const toJsonData = await fetchedData.json()
-        setState({...state, isFetching:false, fetchData:toJsonData}) 
+        setState({...state, isFetching:false, fetchData:toJsonData[0].districts}) 
     }
 
     useEffect(()=>{
         if(state.isFetching){
+            console.log('fetching the data ...')
             FetchingFetch()
         }
     }, [state.isFetching])
@@ -108,7 +94,7 @@ const FetchingData = () =>{
         setState({...state, isFetching:true})
     }
 
-    console.log('fetch data',state.fetchData)
+    console.log('fetched data',state.fetchData)
 
 
 
