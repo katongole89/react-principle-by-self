@@ -21,7 +21,7 @@ const UsingFetchSetup = ({fetchData, isFetching, handleClickFetchGet}) =>{
                             :
                                 (fetchData.map((district)=>{
                                     return(
-                                        <div>
+                                        <div key={district.id}>
                                             <span>{district.name}</span>
                                         </div>
                                     )
