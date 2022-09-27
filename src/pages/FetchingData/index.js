@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 
 //using axios to get and to post
 //using fetch to get and to post
@@ -41,13 +42,33 @@ const UsingFetchSetup = ({fetchData, isFetching, handleClickFetchGet}) =>{
 }
 
 
-const UsingAxiosSetup = () =>{
+const UsingAxiosSetup = ({isAxiosing, axiosData, handleClickAxiosGet}) =>{
     return(
         <>
             <span style={{fontWeight:'bold'}}>Axios</span>
             <div style={{display:'flex',width:'100%', border: '1px solid gray', minHeight:'200px'}}>
                 <div style={{flex:1}}>
-                    <button>Get data</button>
+                    <span>Get data</span>
+                    <div>
+                        <button onClick={handleClickAxiosGet}>Get data</button>
+                    </div>
+                    {isAxiosing?
+                        <div>Fetching data..</div>
+                        :
+                        <div>
+                            {axiosData.length < 1?
+                                <span>No data to display</span>
+                            :
+                                (axiosData.map((district)=>{
+                                    return(
+                                        <div key={district.id}>
+                                            <span>{district.name}</span>
+                                        </div>
+                                    )
+                                }))
+                            }
+                        </div>
+                    }
                 </div>
                 <div style={{flex:1}}>
                     Post data side
@@ -94,7 +115,25 @@ const FetchingData = () =>{
         setState({...state, isFetching:true})
     }
 
-    console.log('fetched data',state.fetchData)
+    const handleClickAxiosGet = () =>{
+        setState({...state, isAxiosing:true})
+    }
+
+    const FetchingAxios = async () => {
+        let url = 'https://raw.githubusercontent.com/bahiirwa/uganda-APIs/master/districts.json'
+        let axiosedData = await axios(url)
+        console.log(axiosedData)
+        setState({...state, isAxiosing:false, axiosData:axiosedData.data[0].districts}) 
+    }
+
+    useEffect(()=>{
+        if(state.isAxiosing){
+            console.log('axiosing the data ...')
+            FetchingAxios()
+        }
+    }, [state.isAxiosing])
+
+    // console.log('fetched data',state.fetchData)
 
 
 
@@ -109,7 +148,7 @@ const FetchingData = () =>{
                     <UsingFetchSetup fetchData={state.fetchData} isFetching={state.isFetching} handleClickFetchGet={handleClickFetchGet}/>
                 </div>
                 <div style={{flex:1,margin:'10px'}}>
-                    <UsingAxiosSetup/>
+                    <UsingAxiosSetup isAxiosing={state.isAxiosing} axiosData={state.axiosData} handleClickAxiosGet={handleClickAxiosGet}/>
                 </div>
 
 
