@@ -12,6 +12,7 @@ import TestUseRefHook from './pages/TestUseRefHook';
 import EventListeners from './pages/EventListenersUseffect/index.js';
 import FetchingData from './pages/FetchingData';
 import FormsComponent from './pages/Forms';
+import CustomHooks from './pages/CustomHooks';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/event-listeners' component={EventListeners} />
           <Route path='/fetching-data' component={FetchingData} />
           <Route path='/forms' component={FormsComponent} />
+          <Route path='/custom-hooks' component={CustomHooks} />
 
       </Switch>
     </Router>
