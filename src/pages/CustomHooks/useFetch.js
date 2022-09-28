@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 
-const useFetch = ({url, doFetch}) => {
+export const useFetch = ({url, doFetch}) => {
     const [state, setState] = useState({
-        loading:false,
+        loading:true,
         data: []
     })
 
@@ -23,7 +23,8 @@ const useFetch = ({url, doFetch}) => {
         try{
             let fetchedData = await fetch(url)
             const toJsonData = await fetchedData.json()
-            setState({...state, isloading:false, data:toJsonData[0].districts})
+            console.log(toJsonData)
+            setState({...state, loading:false, data:toJsonData[0].districts})
         }catch(error){
             console.log('catching the error')
             setState({...state, isloading:false })
@@ -31,11 +32,11 @@ const useFetch = ({url, doFetch}) => {
     }
 
     useEffect(()=>{
-        if(doFetch){
-            FetchingFetch()
-        }
+        console.log('running the useEffect')
+        FetchingFetch()
     }, [doFetch])
 
-    return {loading:state.loading}
+    return {loading:state.loading, data:state.data}
 
 }
+
