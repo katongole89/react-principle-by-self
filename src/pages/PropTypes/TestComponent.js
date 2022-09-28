@@ -16,4 +16,10 @@ TestComponent.propTypes = {
     price:PropTypes.number.isRequired
 }
 
+TestComponent.defaultProps = {
+    image:{},
+    name: 'katongole',
+    price: 2000
+}
+
 export default TestComponent
