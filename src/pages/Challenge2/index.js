@@ -11,11 +11,6 @@
 // if you are inclined to take on styling details, center the input field and display the robot list in centered rows that wrap to the next line after exceeding the page’s width. After entering many robots, the page should look something like this:
 
 
-
-
-
-
-
 import React, {useState, useEffect} from 'react'
 
 
@@ -67,9 +62,7 @@ const Challenge2 = () =>{
                 })}
 
             </div>
-
         </div>
-        
     )
 }
 
