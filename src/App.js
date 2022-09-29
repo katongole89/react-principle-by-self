@@ -14,6 +14,7 @@ import FetchingData from './pages/FetchingData';
 import FormsComponent from './pages/Forms';
 import CustomHooks from './pages/CustomHooks';
 import PropTypesComponent from './pages/PropTypes';
+import TestRegularFetchCustomHook from './pages/Challenge23';
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
           <Route path='/forms' component={FormsComponent} />
           <Route path='/custom-hooks' component={CustomHooks} />
           <Route path='/prop-types' component={PropTypesComponent} />
+          <Route path='/challenge-23' component={TestRegularFetchCustomHook} />
 
       </Switch>
     </Router>
