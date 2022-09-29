@@ -7,7 +7,6 @@ const TestComponent = (image, name, price) => {
             Test component
         </div>
     )
-
 }
 
 TestComponent.propTypes = {
