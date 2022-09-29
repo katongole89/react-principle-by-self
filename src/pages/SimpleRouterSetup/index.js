@@ -6,8 +6,10 @@ const SimpleRouters = () => {
     return(
         <div>
             <Router>
-                <Route path='/' component={TestComponent} />
-                <Route path='/testing' component={TestComponent}/>
+                <Switch>
+                    <Route exact path='/' component={TestComponent} />
+                    <Route path='/testing' component={TestComponent}/>
+                </Switch>
             </Router>
         </div>
     )
