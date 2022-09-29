@@ -15,6 +15,7 @@ import FormsComponent from './pages/Forms';
 import CustomHooks from './pages/CustomHooks';
 import PropTypesComponent from './pages/PropTypes';
 import TestRegularFetchCustomHook from './pages/Challenge23';
+import Challenge1 from './pages/Challenge1';
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           <Route path='/custom-hooks' component={CustomHooks} />
           <Route path='/prop-types' component={PropTypesComponent} />
           <Route path='/challenge-23' component={TestRegularFetchCustomHook} />
+          <Route path='/challenge-1' component={Challenge1} />
 
       </Switch>
     </Router>
