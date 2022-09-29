@@ -24,6 +24,11 @@
 //checking for types
 
 
+//convert object in array
+// Object.entries(obj)
+
+
+
 import React, { useState } from "react";
 
 const DisplayNested = ({ nestedObjected }) => {
