@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 import TestComponent from "../PropTypes/TestComponent"
 
 const SimpleRouters = () => {
@@ -16,3 +16,5 @@ const SimpleRouters = () => {
 }
 
 export default SimpleRouters
+
+<Link to={}></Link>
