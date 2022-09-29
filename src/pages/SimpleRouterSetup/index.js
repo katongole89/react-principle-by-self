@@ -9,6 +9,8 @@ const SimpleRouters = () => {
                 <Switch>
                     <Route exact path='/' component={TestComponent} />
                     <Route path='/testing' component={TestComponent}/>
+                    {/* //error or no page found */}
+                    <Route path='*' component={TestComponent}/>
                 </Switch>
             </Router>
         </div>
@@ -17,4 +19,4 @@ const SimpleRouters = () => {
 
 export default SimpleRouters
 
-<Link to={}></Link>
+{/* <Link to={}></Link> */}
