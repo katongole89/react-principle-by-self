@@ -17,6 +17,7 @@ import PropTypesComponent from './pages/PropTypes';
 import TestRegularFetchCustomHook from './pages/Challenge23';
 import Challenge1 from './pages/Challenge1';
 import Challenge2 from './pages/Challenge2';
+import Challenge3 from './pages/Challenge3';
 
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
           <Route path='/challenge-23' component={TestRegularFetchCustomHook} />
           <Route path='/challenge-1' component={Challenge1} />
           <Route path='/challenge-2' component={Challenge2} />
+          <Route path='/challenge-3' component={Challenge3} />
 
       </Switch>
     </Router>
