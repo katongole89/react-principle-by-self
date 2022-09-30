@@ -35,7 +35,7 @@ const SingleImage = ({url}) =>{
 }
 
 const Challenge4 = () =>{
-    let img = 'https://raw.githubusercontent.com/jusshe/coding-challenge-pictures/main/ladder.png'
+    // let img = 'https://raw.githubusercontent.com/jusshe/coding-challenge-pictures/main/ladder.png'
     let allImages = [1,2,3,4,5]
 
     return(
