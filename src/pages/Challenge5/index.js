@@ -1,10 +1,25 @@
-import React from 'react'
+import React, {createContext, useState} from 'react'
+import ChildComponent from './ChildComponent'
+
+export const GeneralContext = createContext({})
 
 const Challenge5 = () =>{
-    return(
-        <div>
+    const [state, setState] = useState({
+        users:{
+            Bob: true,
+            Gary: true,
+            Jessica: true,
+            Sam: true,
+            Eric: true,
+        }
+    });
 
-        </div>
+    return(
+        <GeneralContext.Provider value={{
+            state,setState
+        }}>
+            <ChildComponent/>
+        </GeneralContext.Provider>
     )
 }
 
