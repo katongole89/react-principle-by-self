@@ -1,3 +1,17 @@
+// Write a functional component to render a button and a list of activities.
+// The list of activities should start out with one activity.
+// When the user clicks the button, an additional activity should be fetched and appended to the list.
+// To generate a random activity, issue a get request to “https://www.boredapi.com/api/activity”
+// — an API for development that does not require authentication. Each request will return a new, 
+// random object containing the following fields: activity, type, participants, price, link, key, and accessibility.
+// The values associated with these fields are either strings or numbers. 
+
+// Each item in the list should display the activity and a button beside it that, 
+// when clicked, renders the remaining fields from that activity’s object below it. 
+// Here is an example of the final product, where the user has expanded the last activity in the list.
+
+
+
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
