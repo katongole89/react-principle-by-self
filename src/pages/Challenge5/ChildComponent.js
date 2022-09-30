@@ -1,5 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import { GeneralContext } from '.'
+import offline from '../../assets/images/ofline.png'
+import online from '../../assets/images/online.png'
 
 const ChildComponent = () =>{
     const {state, setState} = useContext(GeneralContext)
@@ -29,9 +31,9 @@ const ChildComponent = () =>{
                         </div>
                         <div>
                             {bool?
-                                <span>Green</span>
+                                <img src={online}/>
                                 :
-                                <span>Red</span>
+                                <img src={offline}/>
                             }
                         </div>
                     </div>
