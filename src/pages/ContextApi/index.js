@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {createContext} from 'react'
+import ContextComponent from './ContextComponent'
+
+
+export const ContextApiContext = createContext()
 
 const TestingContextApi = () => {
+    
     return(
-        <div>
-            TestingContextApi
-        </div>
+        <ContextApiContext.Provider value={{
+            name:'katongole richard'
+        }}>
+            <ContextComponent/>
+        </ContextApiContext.Provider>
     )
 }
 
