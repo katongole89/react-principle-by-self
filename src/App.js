@@ -19,6 +19,7 @@ import Challenge1 from './pages/Challenge1';
 import Challenge2 from './pages/Challenge2';
 import Challenge3 from './pages/Challenge3';
 import Challenge4 from './pages/Challenge4';
+import TestingContextApi from './pages/ContextApi';
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path='/challenge-2' component={Challenge2} />
           <Route path='/challenge-3' component={Challenge3} />
           <Route path='/challenge-4' component={Challenge4} />
+          <Route path='/testing-context-api' component={TestingContextApi} />
 
       </Switch>
     </Router>
