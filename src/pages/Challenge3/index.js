@@ -19,7 +19,6 @@ const RandomActivity = ({activity}) => {
     const [state, setState] = useState({
         show:false
     })
-    console.log(activity)
 
 
     return(
