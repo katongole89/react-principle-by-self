@@ -1,3 +1,13 @@
+// Write a functional component to render a list of items along with their prices.
+// Above the list, there should be two input fields that allow the user to enter a string and number 
+// and append a row to the list on submit. To the right of each row, there should be a button that allows the user 
+// to remove that row from the list. The complete component with three items in the list is shown below.
+
+// Ensure that both fields are populated before the user can submit their entry.
+// Moreover, do not allow number values less than zero or more precise than two digits after the decimal.
+// In the value column, append a dollar sign before each number.
+
+
 import React, {useState} from 'react'
 
 const Challenge16 = () =>{
