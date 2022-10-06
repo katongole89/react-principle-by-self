@@ -1,3 +1,21 @@
+// Write two functional components to display a list broken into pages 
+// that are traversable via a list of clickable page numbers below the list.
+// The first component — the parent component — should fetch a list of users and conditionally
+// render a loading status or the next component, the actual list generated from the data. The user array fetched
+// in the parent component should be passed to the child component as a prop along with the number of items that should be displayed on each 
+// page. The child component should display the first page of items and clickable links to the remaining pages of users. 
+
+
+// In the image above, the “itemsPerPage” prop is set to 5. You may fetch users from randomuser.me, 
+// a free API that provides random user data. To query the API, issue a get request to https://randomuser.me/api and 
+// include the number of users that you would like returned as a query parameter. For example,
+// issuing a get request to the following URL will return a list of 19 users: https://randomuser.me/api?results=19.
+// The solution I provide later on uses the axios library to issue the request, but you may use fetch or any library that you are 
+// comfortable with to issue the request. The object returned by the request takes the following form (in this case, the results parameter 
+//     was set to 1):
+
+
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
