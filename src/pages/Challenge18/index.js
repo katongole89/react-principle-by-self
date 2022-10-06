@@ -1,10 +1,20 @@
-import axios from 'axios'
-import React from 'react'
 
-const DisplayData =() =>{
+import React, {useEffect, useState} from 'react'
+import axios from 'axios'
+
+const Person = ({personalData}) =>{
     return(
         <div>
-            child component
+            Person
+        </div>
+    )
+
+}
+
+const DisplayData =({data}) =>{
+    return(
+        <div>
+            
         </div>
     )
 }
@@ -12,19 +22,24 @@ const DisplayData =() =>{
 
 const Challenge18 = () => {
     const [state, setState] = useState({
-        data: []
+        data: [],
+        page:'1'
     })
 
     const FetchData = async () =>{
-        let response = await axios('https://randomuser.me/api?results=19')
+        let response = await axios(`https://randomuser.me/api?results=${state.page}`)
         console.log(response)
         setState({...state, data:response.data})
     }
 
+    useEffect(()=>{
+        FetchData()
+    }, [state.page])
+
 
     return(
         <div>
-            
+            <DisplayData data={state.data} />
         </div>
     )
 }
