@@ -26,6 +26,7 @@ import Challenge7 from './pages/Challenge7';
 import Challenge16 from './pages/Challenge16';
 import Challenge18 from './pages/Challenge18';
 import SimpleModal from './pages/SimpleModal';
+import SimpleToDoList from './pages/SimpleTodoList';
 
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
           <Route path='/challenge-18' component={Challenge18} />
           <Route path='/testing-context-api' component={TestingContextApi} />
           <Route path='/simple-modal' component={SimpleModal} />
+          <Route path='/simple-to-do-list' component={SimpleToDoList} />
 
 
       </Switch>
