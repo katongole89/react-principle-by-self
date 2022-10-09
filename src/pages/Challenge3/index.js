@@ -20,7 +20,6 @@ const RandomActivity = ({activity}) => {
         show:false
     })
 
-
     return(
         <div style={{margin:'10px', width:'250px', height:'150px', backgroundColor:'#eee'}}>
             {activity.activity}
@@ -30,7 +29,6 @@ const RandomActivity = ({activity}) => {
                 :
                 null
             }
-            
         </div>
     )
 }
@@ -70,7 +68,6 @@ const Challenge3 = () => {
              type: response.data.type,
              participants:response.data.participants,
              price: response.data.price
-
             }, ...state.activities]})
     }
 
